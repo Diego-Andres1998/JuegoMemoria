@@ -351,6 +351,10 @@ body {
     transform: translateY(-2px);
 }
 
+#export-csv {
+    margin-left: 10px;
+}
+
 /* Rankings Section */
 .rankings-section {
     margin-top: 30px;
@@ -597,30 +601,30 @@ body {
     .container {
         padding: 5px;
     }
-    
+
     .header h1 {
         font-size: 2rem;
     }
-    
+
     .timer {
         font-size: 1.2rem;
         padding: 3px 10px;
     }
-    
+
     .cards-container {
         gap: 8px;
         max-width: 320px;
     }
-    
+
     .card {
         min-height: 60px;
     }
-    
+
     .modal-content {
         padding: 20px;
         margin: 10px;
     }
-    
+
     .form-buttons {
         flex-direction: column;
     }
@@ -631,13 +635,236 @@ body {
         gap: 6px;
         max-width: 280px;
     }
-    
+
     .card {
         min-height: 50px;
     }
-    
+
     .header h1 {
         font-size: 1.8rem;
+    }
+}
+
+/* Large screen optimizations */
+@media (min-width: 768px) {
+    .container {
+        padding: 20px;
+        max-width: 1200px;
+    }
+
+    .header h1 {
+        font-size: 3.5rem;
+    }
+
+    .timer {
+        font-size: 2rem;
+        padding: 8px 20px;
+    }
+
+    .timer-label {
+        font-size: 1.5rem;
+    }
+
+    .cards-container {
+        gap: 15px;
+        max-width: 600px;
+    }
+
+    .card {
+        min-height: 100px;
+    }
+
+    .level-btn {
+        padding: 25px;
+        font-size: 1.2rem;
+    }
+
+    .level-title {
+        font-size: 1.5rem;
+    }
+
+    .level-desc {
+        font-size: 1.1rem;
+    }
+
+    .control-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .modal-content {
+        max-width: 500px;
+        padding: 40px;
+    }
+
+    .modal-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .submit-btn {
+        padding: 18px 35px;
+        font-size: 1.2rem;
+    }
+
+    .secondary-btn {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 30px;
+        max-width: 1400px;
+    }
+
+    .header h1 {
+        font-size: 4rem;
+    }
+
+    .timer {
+        font-size: 2.5rem;
+        padding: 10px 25px;
+    }
+
+    .timer-label {
+        font-size: 1.8rem;
+    }
+
+    .cards-container {
+        gap: 20px;
+        max-width: 700px;
+    }
+
+    .card {
+        min-height: 120px;
+    }
+
+    .level-btn {
+        padding: 30px;
+        font-size: 1.4rem;
+    }
+
+    .level-title {
+        font-size: 1.7rem;
+    }
+
+    .level-desc {
+        font-size: 1.2rem;
+    }
+
+    .control-btn {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+    }
+
+    .modal-content {
+        max-width: 600px;
+        padding: 50px;
+    }
+
+    .modal-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .submit-btn {
+        padding: 20px 40px;
+        font-size: 1.3rem;
+    }
+
+    .secondary-btn {
+        padding: 18px 35px;
+        font-size: 1.2rem;
+    }
+
+    .rankings-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .ranking-name {
+        font-size: 1.1rem;
+    }
+
+    .ranking-time {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        padding: 40px;
+        max-width: 1600px;
+    }
+
+    .header h1 {
+        font-size: 4.5rem;
+    }
+
+    .timer {
+        font-size: 3rem;
+        padding: 12px 30px;
+    }
+
+    .timer-label {
+        font-size: 2rem;
+    }
+
+    .cards-container {
+        gap: 25px;
+        max-width: 800px;
+    }
+
+    .card {
+        min-height: 140px;
+    }
+
+    .level-btn {
+        padding: 35px;
+        font-size: 1.6rem;
+    }
+
+    .level-title {
+        font-size: 1.9rem;
+    }
+
+    .level-desc {
+        font-size: 1.3rem;
+    }
+
+    .control-btn {
+        padding: 18px 35px;
+        font-size: 1.2rem;
+    }
+
+    .modal-content {
+        max-width: 700px;
+        padding: 60px;
+    }
+
+    .modal-content h2 {
+        font-size: 2.8rem;
+    }
+
+    .submit-btn {
+        padding: 22px 45px;
+        font-size: 1.4rem;
+    }
+
+    .secondary-btn {
+        padding: 20px 40px;
+        font-size: 1.3rem;
+    }
+
+    .rankings-header h3 {
+        font-size: 1.7rem;
+    }
+
+    .ranking-name {
+        font-size: 1.2rem;
+    }
+
+    .ranking-time {
+        font-size: 1.3rem;
     }
 }
 
@@ -660,13 +887,13 @@ body {
 }
 
 .card.flip-animation {
-    animation: cardFlip 0.3s ease-in-out; /* Más rápido */
+    animation: cardFlip 0.1s ease-in-out; /* Más rápido */
 }
 
 .card.matched {
-    animation: matchedPulse 0.5s ease-in-out; /* Animación para cartas emparejadas */
+    animation: matchedPulse 0.1s ease-in-out; /* Animación para cartas emparejadas */
 }
 
 .level-btn:active {
-    animation: bounce 0.6s ease-in-out;
+    animation: bounce 0.3s  ease-in-out;
 }

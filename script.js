@@ -58,6 +58,7 @@ document.getElementById('view-full-rankings').addEventListener('click', showFull
 document.getElementById('close-rankings').addEventListener('click', hideRankingsModal);
 document.getElementById('rankings-tab-12').addEventListener('click', () => showRankingsTab(12));
 document.getElementById('rankings-tab-16').addEventListener('click', () => showRankingsTab(16));
+document.getElementById('export-csv').addEventListener('click', exportToCSV);
 
 // Inicialización del juego
 function initializeGame() {
@@ -122,7 +123,7 @@ function createCards() {
         gameState.cards.push({
             element: card,
             value: value,
-            isFlipped: false,
+            isFlipped:  false,
             isMatched: false
         });
         elements.cardsContainer.appendChild(card);
@@ -239,7 +240,7 @@ function flipCard(index) {
     
     // Verificar si hay dos cartas volteadas - tiempo reducido para más competitividad
     if (gameState.flippedCards.length === 2) {
-        setTimeout(checkMatch, 600); // Reducido de 1000ms a 600ms
+        setTimeout(checkMatch, 400); // Reducido de 1000ms a 600ms
     }
 }
 
@@ -597,6 +598,41 @@ function showRankingsTab(level) {
     `;
     
     elements.fullRankingsContent.innerHTML = tableHTML;
+}
+
+function exportToCSV() {
+    const participants = getParticipants();
+    if (participants.length === 0) {
+        alert("No hay participantes para exportar.");
+        return;
+    }
+
+    const headers = ["Nombre", "Apellido", "RUT", "Edad", "Curso", "Telefono", "Tiempo", "Nivel", "Fecha"];
+    const csvRows = participants.map(p => [
+        `"${p.nombre}"`, 
+        `"${p.apellido}"`, 
+        `"${p.rut}"`, 
+        p.edad,
+        `"${p.curso}"`, 
+        `"${p.telefono}"`, 
+        `"${p.tiempo}"`, 
+        p.nivel,
+        `"${new Date(p.fecha).toLocaleString('es-CL')}"`
+    ].join(","));
+
+    const csvContent = [headers.join(","), ...csvRows].join("\n");
+
+    const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement("a");
+    if (link.download !== undefined) {
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", "participantes.csv");
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
 }
 
 // Exponer funciones útiles para debugging

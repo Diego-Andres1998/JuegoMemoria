@@ -74,19 +74,37 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="rut">RUT (Opcional):</label>
-                        <input type="text" id="rut" name="rut" placeholder="12.345.678-9">
+                        <label for="rut">RUT:</label>
+                        <input type="number" id="rut" name="rut" placeholder="12345678-9">
                     </div>
                     
                     <div class="form-group">
                         <label for="edad">Edad:</label>
-                        <input type="number" id="edad" name="edad" min="1" max="120" required>
+                        <input type="number" id="edad" name="edad" min="1" max="120">
                     </div>
-                    
                     <div class="form-group">
-                        <label for="curso">Curso/Carrera:</label>
+                        <label for="curso">Selecciona el curso</label>
+                        <select id="curso" name="curso1" required>
+                            <option value="">Selecciona el curso</option>
+                            <option value="1ro básico">1º Básico</option>
+                            <option value="2do básico">2º Básico</option>
+                            <option value="3ro básico">3º Básico</option>
+                            <option value="4to básico">4º Básico</option>
+                            <option value="5to básico">5º Básico</option>
+                            <option value="6to básico">6º Básico</option>
+                            <option value="7mo básico">7º Básico</option>
+                            <option value="8vo básico">8º Básico</option>
+                            <option value="1ro medio">1º Medio</option>
+                            <option value="2do medio">2º Medio</option>
+                            <option value="3ro medio">3º Medio</option>
+                            <option value="4to medio">4º Medio</option>
+                        </select>
+                    </div>
+                 
+                    <div class="form-group">
+                        <label for="curso">Que carrera te gustaría estudiar en CFT Los Rios:</label>
                         <select id="curso" name="curso" required>
-                            <option value="">Selecciona tu curso...</option>
+                            <option value="">Selecciona La carrera</option>
                             <option value="TNS en Podología Clínica">TNS en Podología Clínica</option>
                             <option value="TNS en Electricidad mención Energías Renovables">TNS en Electricidad mención Energías Renovables</option>
                             <option value="TNS en Enfermería">TNS en Enfermería</option>
@@ -96,7 +114,7 @@
                             <option value="TNS en Agroindustria e Innovación Alimentaria">TNS en Agroindustria e Innovación Alimentaria</option>
                             <option value="TNS en Informática y Data Science">TNS en Informática y Data Science</option>
                             <option value="TNS en Refrigeración y Climatización">TNS en Refrigeración y Climatización</option>
-                            <option value="TNS en Administración Pública Privada">TNS en Administración Pública Privada</option>
+                            <option value="TNS en Administración Pública Privada">TNS en Administración Pública y Privada</option>
                             <option value="TNS en Turismo de Intereses Especiales">TNS en Turismo de Intereses Especiales</option>
                         </select>
                     </div>
@@ -135,6 +153,7 @@
                     <!-- La tabla completa se cargará aquí -->
                 </div>
                 <button id="close-rankings" class="secondary-btn">Cerrar</button>
+                <button id="export-csv" class="secondary-btn">Exportar a CSV</button>
             </div>
         </div>
     </div>
